@@ -6,7 +6,7 @@ from .models import Task
 
 class IndexView(generic.ListView):
     template_name = 'todo/index.html'
-    
+    context_object_name = 'total_todo_list'
     def get_queryset(self):
         """
         Return total ToDo list

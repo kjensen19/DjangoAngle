@@ -1,1 +1,12 @@
-<p>HERE</p>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'todo/style.css' %}">
+{% if total_todo_list %}
+    <ul>
+    {% for todo in total_todo_list %}
+        <li><a href="{% url 'todo:details' todo.id %}">{{ todo.name}}</a></li>
+    {% endfor%}
+    </ul>
+{% else %}
+    <p>No Todo List Available!</p>
+{% endif %}
