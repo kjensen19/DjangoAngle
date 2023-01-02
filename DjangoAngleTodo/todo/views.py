@@ -18,3 +18,5 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Task
     template_name = 'todo/detail.html'
+    def get_queryset(self):
+        return Task.objects
